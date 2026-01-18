@@ -21,6 +21,7 @@
   ],
   "modules-left": [
     "custom/appmenu",
+    "tray",
     "hyprland/workspaces"
   ],
   "modules-center": [
