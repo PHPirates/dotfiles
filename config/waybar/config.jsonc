@@ -1,0 +1,36 @@
+{
+  // Based on https://gitlab.com/mrinmoyin/dotfiles/-/blob/main/waybar/config.jsonc
+  // Reload with killall -SIGUSR2 waybar
+
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  //"height": 16, // Waybar height (to be removed for auto height)
+  // "width": 1280, // Waybar width
+  "spacing": 8, // Gaps between modules (4px)
+  "margin-top": 8,
+  "margin-left": 8,
+  "margin-right": 8,
+  "mode": "dock",
+  "reload_style_on_change": true,
+  "include": [
+    "~/.config/waybar/modules.jsonc",
+    "~/.config/waybar/hardware.jsonc",
+    "~/.config/waybar/media.jsonc",
+    "~/.config/waybar/network.jsonc"
+  ],
+  "modules-left": [
+    "custom/appmenu",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+  ],
+  "modules-right": [
+    "group/connections",
+    "group/media",
+    "group/hardware",
+    "clock",
+    "custom/notification",
+    "custom/power"
+  ]
+}
+

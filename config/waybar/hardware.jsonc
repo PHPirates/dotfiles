@@ -1,0 +1,47 @@
+{
+  "backlight": {
+    "device": "amdgpu_bl1",
+    "format": "{icon} {percent}%",
+    "format-icons": ["", ""]
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}% {time}",
+    "format-charging": "󱐋 {capacity}% {time}",
+    "format-plugged": " {capacity}% ",
+    "format-full": "",
+    "interval": 60,
+    "format-icons": ["", "", "", "", ""], //["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
+    "tooltip": true
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "on-click": "kitty -e htop"
+  },
+  "memory": {
+    "format": " {}%",
+    "on-click": "kitty -e htop"
+  },
+  "disk": {
+    "interval": 30,
+    "format": "💽 {percentage_used}% ",
+    "path": "/",
+    "on-click": "kitty -e htop"
+  },
+  "temperature": {
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": ["", "", ""],
+    "interval": 1,
+    "critical-threshold": 80,
+    "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
+    "input-filename": "temp1_input"
+  },
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": ["backlight", "battery", "cpu", "memory", "disk", "temperature"]
+  }
+}
+

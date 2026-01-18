@@ -1,0 +1,20 @@
+{
+  // Network
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "  {signaldBm}dBm  {bandwidthDownBits:=}  {bandwidthUpBits:=} ",
+    "format-ethernet": "   {bandwidthDownBits}  {bandwidthUpBits} ",
+    "format-disconnected": "󰲛 ",
+    "tooltip-format": "  {ifname} via {gwaddri}",
+    "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+    "interval": 1,
+    "on-click": "sudo wifi-menu"
+  },
+  "group/connections": {
+    "orientation": "horizontal",
+    "modules": ["network"]
+  }
+}

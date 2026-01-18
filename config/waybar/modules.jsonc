@@ -1,0 +1,60 @@
+{
+  // Workspaces
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+  // Application Launcher
+  "custom/appmenu": {
+    "format": "󰣇",
+    "tooltip-format": "Left: Open the application launcher\nRight: Hyprland config",
+    "on-click": "hyprlauncher",
+    "on-click-right": "vim ~/.config/hypr/hyprland.conf",
+    "tooltip": false
+  },
+  // Shutdown
+  "custom/power": {
+    "format": "",
+    "tooltip-format": "Shutdown",
+    "on-click": "hyprshutdown -t 'Shutting down' --post-cmd 'shutdown now'",
+    "tooltip": false
+  },
+  "custom/notification": {
+    "tooltip": false,
+    // "format": "{} {icon}",
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂚",
+      "dnd-notification": "󱅫",
+      "dnd-none": "󰂛",
+      "inhibited-notification": "",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    //"exec-if": "which swaync-client",
+    //"exec": "swaync-client -swb",
+    //"on-click": "swaync-client -t -sw",
+    //"on-click-right": "swaync-client -d -sw",
+    //"escape": true
+  },
+  // Clock
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "󰥔 {0:%H:%M}",
+    "format-alt": "󰥔 {0:%H:%M}   {0:%d-%m-%Y}"
+  }
+}
+
