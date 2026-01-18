@@ -1,0 +1,47 @@
+[user]
+	name = Thomas Schouten
+	# Public email address
+	email = "15669080+PHPirates@users.noreply.github.com"
+	#signingkey = todo, see https://stackoverflow.com/a/46884134/4126843
+[core]
+	editor = vim
+[mergetool "intellij"]
+	cmd = '/home/thomas/.local/share/JetBrains/Toolbox/scripts/idea' merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+    	trustExitCode = true
+[merge]
+	tool = intellij
+[mergetool]
+	keepBackup = false
+[rerere]
+	enabled = true
+[alias]
+	br = checkout -b
+	st = status -sb
+	ci = commit -am
+	co = checkout
+	fancylog = log --graph --decorate --oneline --all
+
+	# Commit and push. Parameter: commit message
+	cp = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
+
+	# The ! is to make the | work
+	# To use, configure git config sendemail.to address@mail.com
+	sendcommit = ! git format-patch -M HEAD^ | xargs git send-email && rm *.patch
+
+	# Delete all local branches which are merged
+	# Use ! to use |, escape \ and use ' instead of "
+	delete-merged-branches = ! git branch --merged | egrep -v '(^\\*|master)' | xargs git branch -d
+
+	# Check which remote branches would be deleted. Parameter: remote name (e.g. origin)
+	delete-merged-remote-branches-dry-run = ! git branch -r --merged | grep -v master | grep \"$@\" | sed 's/'$@'\\///' | xargs -n 1 echo
+
+	# Delete all remote branches which are merged. Parameter: remote name (e.g. origin)
+	delete-merged-remote-branches = ! git branch -r --merged | grep -v master | grep \"$@\" | sed 's/'$@'\\///' | xargs -n 1 git push --delete
+
+[merge "theirs"]
+	driver = true
+[commit]
+	gpgsign = true
+[pull]
+	rebase = true
+
