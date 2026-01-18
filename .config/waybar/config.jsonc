@@ -14,6 +14,7 @@
   "reload_style_on_change": true,
   "include": [
     "~/.config/waybar/modules.jsonc",
+    "~/.config/waybar/auxil.jsonc",
     "~/.config/waybar/hardware.jsonc",
     "~/.config/waybar/media.jsonc",
     "~/.config/waybar/network.jsonc"
@@ -27,6 +28,7 @@
   "modules-right": [
     "group/connections",
     "group/media",
+    "group/auxil",
     "group/hardware",
     "clock",
     "custom/notification",

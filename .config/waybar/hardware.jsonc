@@ -1,22 +1,4 @@
 {
-  "backlight": {
-    "device": "amdgpu_bl1",
-    "format": "{icon} {percent}%",
-    "format-icons": ["", ""]
-  },
-  "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{icon} {capacity}% {time}",
-    "format-charging": "󱐋 {capacity}% {time}",
-    "format-plugged": " {capacity}% ",
-    "format-full": "",
-    "interval": 60,
-    "format-icons": ["", "", "", "", ""], //["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
-    "tooltip": true
-  },
   "cpu": {
     "format": " {usage}%",
     "on-click": "kitty -e htop"
@@ -41,7 +23,7 @@
   },
   "group/hardware": {
     "orientation": "horizontal",
-    "modules": ["backlight", "battery", "cpu", "memory", "disk", "temperature"]
+    "modules": ["cpu", "memory", "disk", "temperature"]
   }
 }
 
