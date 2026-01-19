@@ -2,8 +2,8 @@
   // Network
   "network": {
     "format": "{ifname}",
-    "format-wifi": "  {signaldBm}dBm  {bandwidthDownBits:=}  {bandwidthUpBits:=} ",
-    "format-ethernet": "   {bandwidthDownBits}  {bandwidthUpBits} ",
+    "format-wifi": "  {signaldBm}dBm ", //  {bandwidthDownBits:=}  {bandwidthUpBits:=} ",
+    "format-ethernet": " ",
     "format-disconnected": "󰲛 ",
     "tooltip-format": "  {ifname} via {gwaddri}",
     "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
@@ -13,8 +13,11 @@
     "interval": 1,
     "on-click": "sudo wifi-menu"
   },
+  "custom/bandwidth": {
+    "exec": "$HOME/.config/waybar/scripts/bandwidth.py"
+  },
   "group/connections": {
     "orientation": "horizontal",
-    "modules": ["network"]
+    "modules": ["network", "custom/bandwidth"]
   }
 }
