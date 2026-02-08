@@ -24,3 +24,5 @@ zstyle :compinstall filename '/home/thomas/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+export PATH=$PATH:/home/thomas/.local/bin

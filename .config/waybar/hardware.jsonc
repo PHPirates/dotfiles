@@ -1,11 +1,13 @@
 {
   "cpu": {
     "format": " {usage}%",
-    "on-click": "kitty -e htop"
+    "on-click": "kitty -e htop",
+    "interval": 1
   },
   "memory": {
     "format": " {}%",
-    "on-click": "kitty -e htop"
+    "on-click": "kitty -e htop",
+    "interval": 1
   },
   "disk": {
     "interval": 30,
